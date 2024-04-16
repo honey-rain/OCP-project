@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth, googleAuthProvider } from '../firebase'; // Імпорт Firebase аутентифікації
+import { auth, googleAuthProvider } from './firebase'; // Імпорт Firebase аутентифікації
 
 const Login = () => {
   // Функція для входу за допомогою Google
