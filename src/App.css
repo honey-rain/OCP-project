@@ -1,0 +1,109 @@
+/* App.css */
+
+/* Стилі для всіх компонентів */
+.App {
+  font-family: "Brush Script MT", cursive;
+  color: darkred;
+  text-align: center; /* Вирівнюємо весь текст посередині сторінки */
+  
+  background-size: cover; /* Заповнюємо всю доступну площу зображенням */
+  background-position: center; /* Вирівнюємо зображення по центру */
+}
+
+/* Стилі для навігаційного бару */
+.navigation-bar {
+  background-color: rgba(255, 255, 255, 0.8); /* Прозорий білий колір для читабельності */
+  padding: 10px;
+}
+
+.navigation-bar p {
+  font-size: 18px;
+}
+
+.navigation-bar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navigation-bar ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Стилі для посилань у навігаційному барі */
+.navigation-bar a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Стилі для футера */
+footer {
+  background-color: rgba(255, 255, 255, 0.8); /* Прозорий білий колір для читабельності */
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Стилі для форм створення звернень */
+.form-container {
+  margin-top: 20px;
+  text-align: left; /* Вирівнюємо текст у формі по лівому краю */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  display: flex; /* Використовуємо flexbox для вирівнювання тексту та поля введення */
+  align-items: center; /* Вирівнюємо текст і поля введення по вертикалі */
+  margin-bottom: 10px;
+}
+
+.form-container label span {
+  margin-right: 10px; /* Задаємо відступ між текстом і полем введення */
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container textarea,
+.form-container select,
+.form-container button {
+  width: 300px; /* Фіксована ширина полів введення і кнопки */
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+/* App.css */
+
+footer {
+  display: flex;
+  justify-content: center; /* Розмістити стовпці посередині горизонтально */
+  margin-top: 20px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column > div {
+  margin-bottom: 10px;
+}
+a {
+  color: grey; /* Змінюємо колір тексту посилань на сірий */
+  text-decoration: none; /* Видаляємо підкреслення з посилань */
+}
+
+a:hover {
+  text-decoration: underline; /* Підкреслюємо посилання при наведенні курсора */
+}

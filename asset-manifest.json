@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/OCP-project/static/css/main.b76314b2.css",
+    "main.js": "/OCP-project/static/js/main.23c4652c.js",
+    "static/js/453.b12a1191.chunk.js": "/OCP-project/static/js/453.b12a1191.chunk.js",
+    "index.html": "/OCP-project/index.html",
+    "main.b76314b2.css.map": "/OCP-project/static/css/main.b76314b2.css.map",
+    "main.23c4652c.js.map": "/OCP-project/static/js/main.23c4652c.js.map",
+    "453.b12a1191.chunk.js.map": "/OCP-project/static/js/453.b12a1191.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b76314b2.css",
+    "static/js/main.23c4652c.js"
+  ]
+}
