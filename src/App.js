@@ -5,6 +5,7 @@ import AboutUs from './components/AboutUs';
 import News from './components/News';
 import TelegramBot from './components/TelegramBot';
 import Cabinet from './components/Cabinet';
+import LetterPage from './components/LetterPage'
 import Footer from './components/Footer';
 import './App.css';
 
@@ -23,7 +24,7 @@ function App() {
                 <Link to="/news">Новини</Link>
               </li>
               <li>
-                <a href="https://t.me/ocp_ldubgd_bot">Телеграм-бот</a> {/* Посилання, що ви згадували */}
+                <a href="https://t.me/ocp_ldubgd_bot">Телеграм-бот</a> 
               </li>
               <li>
                 <Link to="/cabinet">Кабінет</Link>
@@ -32,13 +33,15 @@ function App() {
           </nav>
         </div>
 
-        <Routes> {/* Замінено на Routes */}
+        <Routes> 
           <Route path="/" exact element={<AboutUs />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/cabinet" element={<Cabinet />} />
-          
-          {/* Додайте інші роутери для потрібних компонентів */}
-        </Routes> {/* Замінено на Routes */}
+          <Route path="/news" exact element={<News />} />
+          <Route path="/cabinet" exact element={<Cabinet />} />
+          <Route path="/pages">
+            <Route path=":id" element={<LetterPage />} />
+          </Route>
+
+        </Routes> 
 
         <Footer />
       </div>

@@ -1,23 +1,28 @@
-/* App.css */
-
-/* Стилі для всіх компонентів */
+body, #root {
+  height: 100%;
+}
 .App {
-  font-family: "Brush Script MT", cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  /* font-family: "Brush Script MT", cursive; */
   color: darkred;
   text-align: center; /* Вирівнюємо весь текст посередині сторінки */
   
   background-size: cover; /* Заповнюємо всю доступну площу зображенням */
   background-position: center; /* Вирівнюємо зображення по центру */
+  background-image: url('/img/imgBG.jpg');
 }
 
 /* Стилі для навігаційного бару */
 .navigation-bar {
-  background-color: rgba(255, 255, 255, 0.8); /* Прозорий білий колір для читабельності */
+  background-color: rgba(188, 185, 182, 0.8); 
   padding: 10px;
 }
 
 .navigation-bar p {
-  font-size: 18px;
+  font-size: 28px;
 }
 
 .navigation-bar ul {
@@ -38,9 +43,10 @@
 
 /* Стилі для футера */
 footer {
-  background-color: rgba(255, 255, 255, 0.8); /* Прозорий білий колір для читабельності */
+  background-color: rgba(65, 65, 65, 0.855);
   padding: 20px 0;
   text-align: center;
+  color: #f7b763;
 }
 
 /* Стилі для форм створення звернень */
@@ -49,6 +55,7 @@ footer {
   text-align: left; /* Вирівнюємо текст у формі по лівому краю */
   display: flex;
   flex-direction: column;
+  background-color: rgba(188, 185, 182, 0.8);;
 }
 
 .form-container label {
@@ -74,14 +81,14 @@ footer {
 }
 
 .form-container button {
-  background-color: #007bff;
+  background-color: #a71909;
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
 .form-container button:hover {
-  background-color: #0056b3;
+  background-color: #a71909;
 }
 /* App.css */
 
@@ -100,7 +107,7 @@ footer {
   margin-bottom: 10px;
 }
 a {
-  color: grey; /* Змінюємо колір тексту посилань на сірий */
+  color: rgb(215, 58, 47); /* Змінюємо колір тексту посилань на сірий */
   text-decoration: none; /* Видаляємо підкреслення з посилань */
 }
 
