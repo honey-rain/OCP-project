@@ -1,4 +1,13 @@
-body, #root {
+body {
+  height: 100%;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
   height: 100%;
 }
 .App {
@@ -6,19 +15,27 @@ body, #root {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  /* font-family: "Brush Script MT", cursive; */
-  color: darkred;
+  font-family: "Montserrat"  ;
+  color: rgb(188, 186, 186);
   text-align: center; /* Вирівнюємо весь текст посередині сторінки */
   
   background-size: cover; /* Заповнюємо всю доступну площу зображенням */
   background-position: center; /* Вирівнюємо зображення по центру */
-  background-image: url('/img/imgBG.jpg');
+  background-image: url('/img/body.webp');
+  margin: 0;
+  padding: 0;
+  /* background-color: #2b2b2bdc; */
 }
 
 /* Стилі для навігаційного бару */
 .navigation-bar {
-  background-color: rgba(188, 185, 182, 0.8); 
   padding: 10px;
+  color: #dcd9d9;
+  background-size: cover; /* Або використовуйте contain для збереження пропорцій */
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-image: url('/img/fire2.jpeg'); */
+  background-color: #7a7a7a5c;
 }
 
 .navigation-bar p {
@@ -38,79 +55,117 @@ body, #root {
 /* Стилі для посилань у навігаційному барі */
 .navigation-bar a {
   text-decoration: none;
-  color: #333;
+  color: #dcd9d9;
 }
 
-/* Стилі для футера */
-footer {
-  background-color: rgba(65, 65, 65, 0.855);
-  padding: 20px 0;
-  text-align: center;
-  color: #f7b763;
+/* styles.css */
+
+.user-info-container {
+  position: relative;
 }
+
+.user-info {
+  font-weight: bold;
+  border: 2px solid #333;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px; /* Додаємо відступ між ім'ям користувача та кнопкою */
+  text-align: right; /* Розташовуємо текст праворуч */
+  display: inline-block; /* Додаємо display: inline-block, щоб контейнер охоплював тільки ширину тексту */
+}
+
+.logout-button {
+  position: absolute;
+  top: calc(100% + 10px); /* Позиціонуємо кнопку під ім'ям користувача */
+  right: 0;
+}
+
 
 /* Стилі для форм створення звернень */
 .form-container {
-  margin-top: 20px;
-  text-align: left; /* Вирівнюємо текст у формі по лівому краю */
   display: flex;
   flex-direction: column;
-  background-color: rgba(188, 185, 182, 0.8);;
+  align-items: center;
+  padding: 50px;
+  color: #222222;
+  background-color: rgba(255, 255, 255, 0.7);
+  max-width: 600px; 
+  margin: 0 auto; 
 }
 
-.form-container label {
-  display: flex; /* Використовуємо flexbox для вирівнювання тексту та поля введення */
-  align-items: center; /* Вирівнюємо текст і поля введення по вертикалі */
+.form-column {
+  width: 100%;
+}
+
+label {
+  display: block;
   margin-bottom: 10px;
 }
 
-.form-container label span {
-  margin-right: 10px; /* Задаємо відступ між текстом і полем введення */
-}
-
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="tel"],
-.form-container textarea,
-.form-container select,
-.form-container button {
-  width: 300px; /* Фіксована ширина полів введення і кнопки */
-  padding: 10px;
-  margin-bottom: 10px;
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: calc(100% - 16px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
+  margin-top: 4px;
 }
 
-.form-container button {
-  background-color: #a71909;
-  color: #fff;
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
-.form-container button:hover {
-  background-color: #a71909;
+button[type="submit"]:hover {
+  background-color: #45a049;
 }
-/* App.css */
 
-footer {
+.footer-content {
+  position: relative; /* Встановлюємо позиціонування */
   display: flex;
-  justify-content: center; /* Розмістити стовпці посередині горизонтально */
-  margin-top: 20px;
+  justify-content: center; 
+  color: #afacac;
+  background-color: #292828cf; /* Колір фону */
+  padding: 20px;
 }
 
 .footer-column {
-  display: flex;
-  flex-direction: column;
+  width: 45%;
+  text-align: left; /* Вирівнювання тексту по лівому краю */
 }
 
-.footer-column > div {
+.footer-column.left-column {
+  margin-right: 20px; /* Додатковий відступ між колонками */
+}
+
+.footer-column.right-column {
+  margin-left: 20px; /* Додатковий відступ між колонками */
+}
+
+.footer-column div {
   margin-bottom: 10px;
 }
+
+.footer-column a {
+  color: #e2e1df;
+}
+
 a {
   color: rgb(215, 58, 47); /* Змінюємо колір тексту посилань на сірий */
   text-decoration: none; /* Видаляємо підкреслення з посилань */
 }
 
 a:hover {
-  text-decoration: underline; /* Підкреслюємо посилання при наведенні курсора */
+  text-decoration: underline;
+  color: rgb(177, 21, 10);
 }

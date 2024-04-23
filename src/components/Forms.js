@@ -53,43 +53,47 @@ const Forms = () => {
     <div className="content">
       <h2>Створити звернення</h2>
       <form className="form-container" onSubmit={handleFormSubmit}>
-        <label>
-          Вид звернення:
-          <select value={appealType} onChange={(e) => setAppealType(e.target.value)}>
-            <option value="">Оберіть вид звернення</option>
-            <option value="Заява">Заява</option>
-            <option value="Скарга">Скарга</option>
-            <option value="Пропозиція">Пропозиція</option>
-          </select>
-        </label>
-        <label>
-          Ім'я:
-          <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-        </label>
-        <label>
-          Прізвище:
-          <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-        </label>
-        <label>
-          Статус у цьому ЗВО:
-          <input type="text" value={status} onChange={(e) => setStatus(e.target.value)} />
-        </label>
-        <label>
-          Електронна пошта:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <label>
-          Номер телефону:
-          <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-        </label>
-        <label>
-          Текст звернення:
-          <textarea value={text} onChange={(e) => setText(e.target.value)} />
-        </label>
-        <label>
-          Прикріпити файл:
-          <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-        </label>
+        <div className="form-column">
+          <label>
+            Вид звернення:
+            <select value={appealType} onChange={(e) => setAppealType(e.target.value)}>
+              <option value="">Оберіть вид звернення</option>
+              <option value="Заява">Заява</option>
+              <option value="Скарга">Скарга</option>
+              <option value="Пропозиція">Пропозиція</option>
+            </select>
+          </label>
+          <label>
+            Ім'я:
+            <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+          </label>
+          <label>
+            Прізвище:
+            <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+          </label>
+          <label>
+            Статус у цьому ЗВО:
+            <input type="text" value={status} onChange={(e) => setStatus(e.target.value)} />
+          </label>
+        </div>
+        <div className="form-column">
+          <label>
+            Email:
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          </label>
+          <label>
+            Номер телефону:
+            <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+          </label>
+          <label>
+            Текст звернення:
+            <textarea value={text} onChange={(e) => setText(e.target.value)} />
+          </label>
+          <label>
+            Прикріпити файл:
+            <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+          </label>
+        </div>
         <button type="submit">Надіслати</button>
       </form>
     </div>

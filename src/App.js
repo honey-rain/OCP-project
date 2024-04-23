@@ -3,18 +3,18 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import AboutUs from './components/AboutUs';
 import News from './components/News';
-import TelegramBot from './components/TelegramBot';
 import Cabinet from './components/Cabinet';
 import LetterPage from './components/LetterPage'
 import Footer from './components/Footer';
 import './App.css';
+// import ProfileMenu from './components/ProfileMenu';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <div className="navigation-bar">
-          <p>Open community platform</p>
+          <p><b>Open community platform</b></p>
           <nav>
             <ul>
               <li>
@@ -32,6 +32,7 @@ function App() {
             </ul>
           </nav>
         </div>
+        {/* <ProfileMenu /> */}
 
         <Routes> 
           <Route path="/" exact element={<AboutUs />} />
