@@ -6,8 +6,6 @@ import CabinetContent from './CabinetContent';
 const Cabinet = () => {
   const [user, setUser] = useState(null);
 
-
-
   useEffect(() => {
     // Спостереження за змінами статусу авторизації
     const unsubscribe = auth.onAuthStateChanged(user => {
@@ -26,7 +24,7 @@ const Cabinet = () => {
 
   return (
     <div className="cabinet">
-      <h2>Кабінет</h2>
+      <h1>Кабінет</h1>
       {user ? <CabinetContent user = {user} /> : <Login />}
     </div>
   );

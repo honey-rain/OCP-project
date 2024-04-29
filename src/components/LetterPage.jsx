@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { getLocalStorageLetters } from '../helpers'
 
 const initState = {
   'firstName': '',
@@ -12,11 +13,10 @@ const LetterPage = () => {
   const [letter, setLetter] = useState(initState)
 
   useEffect(() => {
-    const lettersArray = JSON.parse(localStorage.getItem('lettersArray'))
+    const lettersArray = getLocalStorageLetters()
     const _letter = lettersArray.find((element) => element.id === id)
-    console.log('_letter', _letter)
     setLetter(_letter)
-  }, [])
+  }, [id])
   
   return (
     <ul>

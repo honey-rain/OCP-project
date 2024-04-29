@@ -7,7 +7,6 @@ import LogOut from './LogOut';
 const CabinetContent = ({user}) => { 
   const { displayName, email } = user;
   const isAdmin = email === 'opencommunityplatform@gmail.com';
-  localStorage.removeItem('lettersArray');
   
   return (
     <div className="user-info-container"> 
@@ -15,7 +14,7 @@ const CabinetContent = ({user}) => {
       <div className="user-info">{displayName}</div>
       <LogOut />
       { isAdmin ? <AdminLetters /> : <Letters email={email} /> }
-      <Forms /> 
+      { !isAdmin && < Forms />  }
     </div>
   );
 };

@@ -1,41 +1,62 @@
-body {
+html {
   height: 100%;
+  min-height: 100%;
 }
 
-body, html {
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
-#root {
-  height: 100%;
-}
+  #root {
+    height: 100%;
+  }
+
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  min-height: 100%;
   font-family: "Montserrat"  ;
-  color: rgb(188, 186, 186);
+  color: rgb(250, 250, 250);
   text-align: center; /* Вирівнюємо весь текст посередині сторінки */
-  
-  background-size: cover; /* Заповнюємо всю доступну площу зображенням */
+  background-size:100% 100%; /* Заповнюємо всю доступну площу зображенням */
   background-position: center; /* Вирівнюємо зображення по центру */
-  background-image: url('/img/body.webp');
+  /* background-image: url('/img/simpleblue.jpg'); */
+  background-repeat: no-repeat;
   margin: 0;
   padding: 0;
-  /* background-color: #2b2b2bdc; */
+  width: 100%;
+  /* height: 100vh; */
+  background-color: #6c9df3d9;
 }
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 30px;
+}
+
 
 /* Стилі для навігаційного бару */
 .navigation-bar {
   padding: 10px;
-  color: #dcd9d9;
+  margin-bottom: 5px;
+  color: #f5f5f5;
   background-size: cover; /* Або використовуйте contain для збереження пропорцій */
   background-position: center;
   background-repeat: no-repeat;
   /* background-image: url('/img/fire2.jpeg'); */
   background-color: #7a7a7a5c;
+}
+.logo1 {
+  margin-right: 20px; /* Просторівка між емблемою та текстом */
+}
+.logo2 {
+  margin-left: 20px; /* Просторівка між емблемою та текстом */
 }
 
 .navigation-bar p {
@@ -58,7 +79,15 @@ body, html {
   color: #dcd9d9;
 }
 
-/* styles.css */
+.letters {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.letters ol {
+  text-align: left;
+}
 
 .user-info-container {
   position: relative;
@@ -66,7 +95,7 @@ body, html {
 
 .user-info {
   font-weight: bold;
-  border: 2px solid #333;
+  border: 2px solid #293575;
   padding: 8px;
   border-radius: 4px;
   margin-bottom: 10px; /* Додаємо відступ між ім'ям користувача та кнопкою */
@@ -78,8 +107,30 @@ body, html {
   position: absolute;
   top: calc(100% + 10px); /* Позиціонуємо кнопку під ім'ям користувача */
   right: 0;
+  background-color: #6071af;
+  color: #ffffff;
 }
-
+.instruction {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px; /* Відступ зліва */
+    padding-right: 20px; /* Відступ справа */
+    width: 80%;
+}
+.about {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px; /* Відступ зліва */
+  padding-right: 20px; /* Відступ справа */
+  width: 80%;
+}
+.news {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px; /* Відступ зліва */
+  padding-right: 20px; /* Відступ справа */
+  width: 80%;
+}
 
 /* Стилі для форм створення звернень */
 .form-container {
@@ -135,7 +186,7 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: center; 
   color: #afacac;
-  background-color: #292828cf; /* Колір фону */
+  background-color: #383d52cf; /* Колір фону */
   padding: 20px;
 }
 
@@ -161,11 +212,11 @@ button[type="submit"]:hover {
 }
 
 a {
-  color: rgb(215, 58, 47); /* Змінюємо колір тексту посилань на сірий */
+  color: rgb(48, 53, 152); /* Змінюємо колір тексту посилань на сірий */
   text-decoration: none; /* Видаляємо підкреслення з посилань */
 }
 
 a:hover {
   text-decoration: underline;
-  color: rgb(177, 21, 10);
+  color: rgb(212, 124, 36);
 }

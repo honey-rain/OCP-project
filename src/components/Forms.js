@@ -34,7 +34,7 @@ const Forms = () => {
     lettersRef.add(formData)
       .then(() => {
         console.log("Дані успішно додані до колекції 'Letters'");
-        // Очистіть форму після успішного додавання
+        
         setAppealType('');
         setFirstName('');
         setLastName('');
@@ -50,8 +50,8 @@ const Forms = () => {
   };
 
   return (
-    <div className="content">
-      <h2>Створити звернення</h2>
+    <div className="form">
+      <h3>Створити звернення</h3>
       <form className="form-container" onSubmit={handleFormSubmit}>
         <div className="form-column">
           <label>
