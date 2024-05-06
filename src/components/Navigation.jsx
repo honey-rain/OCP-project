@@ -5,6 +5,7 @@ const Navigation = () => (
 
 
 <div className="navigation-bar">
+          <p id='ldubgd'>Львівський державний університет безпеки життєдіяльності</p>
           <p><img src={logo} alt="Емблема" className="logo1" /><b>Open community platform</b><img src={logo} alt="Емблема" className="logo2" /></p>
           <nav>
             <ul>

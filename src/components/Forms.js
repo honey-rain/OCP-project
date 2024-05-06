@@ -1,48 +1,69 @@
 import React, { useState } from 'react';
 import firebase from 'firebase/compat/app'; // Імпортуйте Firebase
 import 'firebase/compat/firestore'; // Імпортуйте модуль Firestore
+import { storage } from './firebase';
+import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage'
 
 const Forms = () => {
-  const [appealType, setAppealType] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [status, setStatus] = useState('');
-  const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [text, setText] = useState('');
-  const [file, setFile] = useState(null);
+  // const [appealType, setAppealType] = useState('');
+  // const [firstName, setFirstName] = useState('');
+  // const [lastName, setLastName] = useState('');
+  // const [status, setStatus] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [phoneNumber, setPhoneNumber] = useState('');
+  // const [text, setText] = useState('');
+  // const [file, setFile] = useState(null);
+
+   const [imgUrl, setImgUrl] = useState(null);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
+    const { appealType, firstName, lastName, phoneNumber, email, status, text, file} = event.target
+    // console.log('appealType', appealType.value)
+    // console.log('firstName', firstName.value)
+    const _file = file?.files[0]
+
+
+
 
     // Отримати посилання на колекцію "Letters" у вашій базі даних
     const lettersRef = firebase.firestore().collection('Letters');
 
     // Створіть об'єкт з даними форми
     const formData = {
-      appealType,
-      firstName,
-      lastName,
-      status,
-      email,
-      phoneNumber,
-      text,
-      file
+      appealType: appealType.value,
+      firstName: firstName.value,
+      lastName: lastName.value,
+      status: status.value,
+      email: email.value,
+      phoneNumber: phoneNumber.value,
+      text: text.value,
+      imgUrl
     };
+
+    const storageRef = ref(storage, `files/${_file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, _file);
+
+    uploadTask.on("state_changed",
+      (snapshot) => {
+        console.log('file is uploaded')
+      },
+      (error) => {
+        alert(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setImgUrl(downloadURL)
+        });
+      }
+    );
 
     // Додайте дані у колекцію "Letters"
     lettersRef.add(formData)
       .then(() => {
-        console.log("Дані успішно додані до колекції 'Letters'");
         
-        setAppealType('');
-        setFirstName('');
-        setLastName('');
-        setStatus('');
-        setEmail('');
-        setPhoneNumber('');
-        setText('');
-        setFile(null);
+        console.log("Дані успішно додані до колекції 'Letters'");
       })
       .catch((error) => {
         console.error("Помилка при додаванні даних:", error);
@@ -56,7 +77,7 @@ const Forms = () => {
         <div className="form-column">
           <label>
             Вид звернення:
-            <select value={appealType} onChange={(e) => setAppealType(e.target.value)}>
+            <select name='appealType'>
               <option value="">Оберіть вид звернення</option>
               <option value="Заява">Заява</option>
               <option value="Скарга">Скарга</option>
@@ -65,33 +86,33 @@ const Forms = () => {
           </label>
           <label>
             Ім'я:
-            <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+            <input name='firstName' type="text" />
           </label>
           <label>
             Прізвище:
-            <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+            <input name='lastName' type="text" />
           </label>
           <label>
             Статус у цьому ЗВО:
-            <input type="text" value={status} onChange={(e) => setStatus(e.target.value)} />
+            <input name='status' type="text" />
           </label>
         </div>
         <div className="form-column">
           <label>
             Email:
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input name='email' type="email" />
           </label>
           <label>
             Номер телефону:
-            <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+            <input name='phoneNumber' type="tel" />
           </label>
           <label>
             Текст звернення:
-            <textarea value={text} onChange={(e) => setText(e.target.value)} />
+            <textarea name='text' />
           </label>
           <label>
             Прикріпити файл:
-            <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+            <input name='file' type="file" />
           </label>
         </div>
         <button type="submit">Надіслати</button>
